@@ -28,22 +28,32 @@ The script was modifies for create Entities & Repositories that can be extends f
 
 The script will generate a fileSystem with this hierarchy and name convention:
 "Context"
+
 	|_ DatabaseName
+
 		|_ Table
+
 			|_ Entity
+
 				|_ Table{Entity.php}
+
 				|_ Table{EntityInterface.php}
+
 				|_ Table{EntityTrait.php} (Getters & Setters)
+
 			|_ Repository
+
 				|_ Table{Repository.php} (Mention DBAL Script, later will be update)
+
 				|_ Table{RepositoryInterface.php}
 
 
+
 The Entities are under the namespace:
-namespace  Domain\Aggregates\Entity\{Table}
+namespace  Domain\Aggregates\Entity\\{Table}
 
 The Repository are under the namespace:
-namespace  Application\Repositories\{Table}
+namespace  Application\Repositories\\{Table}
 
 Happy Coding!
 
