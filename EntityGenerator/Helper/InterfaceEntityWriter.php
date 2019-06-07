@@ -4,7 +4,7 @@ namespace EntityGenerator\Helper;
 trait InterfaceEntityWriter
 {
 
-    public function writeEntityInterface(string $contextType)
+    public function writeEntityInterface(string $contextType):void
     {
         $this->writeContent(
             $this->writeOpenFile()
@@ -54,7 +54,7 @@ trait InterfaceEntityWriter
         unset($contextType);
     }
 
-    private function writeGettersInterface($coloumnName, string $type = '')
+    private function writeGettersInterface($coloumnName, string $type = ''):string
     {
         $studlyColoumnName = HelperFunctions::studlyCaps($coloumnName);
         $typeConvertion = HelperFunctions::typeAlias($type);
@@ -62,7 +62,7 @@ trait InterfaceEntityWriter
         return "    public function get{$studlyColoumnName}(): {$typeConvertion};\n";
     }
 
-    private function writeSettersInterface($coloumnName, string $type = '')
+    private function writeSettersInterface($coloumnName, string $type = ''):string
     {
         $studlyColoumnName = HelperFunctions::studlyCaps($coloumnName);
         $camelColoumnName = HelperFunctions::camelCase($coloumnName);

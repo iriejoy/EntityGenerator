@@ -3,7 +3,7 @@ namespace EntityGenerator\Helper;
 
 trait RepositoryWriter
 {
-    public function writeRepositoryInterface(string $contextType)
+    public function writeRepositoryInterface(string $contextType):void
     {
         $this->writeContent(
             $this->writeOpenFile()
@@ -17,7 +17,6 @@ trait RepositoryWriter
             $this->writeComments()
         );
 
-        //$this->_entity .= $this->generateInterface($coloumnNames, $studlyTableName);
         $this->_entity .= "interface {$this->_enityName}{$contextType}Interface
 {\n";
         $this->_entity .= "    /**\n";
@@ -38,7 +37,7 @@ trait RepositoryWriter
         unset($contextType);
     }
 
-    public function writeRepositoryClass(string $contextType)
+    public function writeRepositoryClass(string $contextType):void
     {
         $this->writeContent(
             $this->writeOpenFile()

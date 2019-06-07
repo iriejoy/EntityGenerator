@@ -3,7 +3,7 @@ namespace EntityGenerator\Helper;
 
 trait TraitWriter
 {
-    public function writeEntityTrait(string $contextType)
+    public function writeEntityTrait(string $contextType):void
     {
         $this->writeContent(
             $this->writeOpenFile()
@@ -51,7 +51,7 @@ trait TraitWriter
         unset($contextType);
     }
 
-    private function writeGettersTrait($coloumnName, string $type = '')
+    private function writeGettersTrait($coloumnName, string $type = ''):string
     {
         $studlyColoumnName = HelperFunctions::studlyCaps($coloumnName);
         $typeConvertion = HelperFunctions::typeAlias($type);
@@ -62,7 +62,7 @@ trait TraitWriter
         $str .= "    }\n";
         return $str;
     }
-    private function writeSettersTrait($coloumnName, string $type = '')
+    private function writeSettersTrait($coloumnName, string $type = ''):string
     {
         $studlyColoumnName = HelperFunctions::studlyCaps($coloumnName);
         $camelColoumnName = HelperFunctions::camelCase($coloumnName);
