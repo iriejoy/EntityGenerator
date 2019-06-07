@@ -1,5 +1,5 @@
-<?php 
-require_once 'init.php';
+<?php
+require_once 'init-production.php';
 use EntityGenerator\Database\DatabaseRepository;
 
 $databaseRepository = new DatabaseRepository($connection);
